@@ -6,16 +6,8 @@
     <title>Abhijith | Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-
-    <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-
-    menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
-    });
-</script>
 
 <header>
     <h2>My Portfolio</h2>
@@ -24,47 +16,40 @@
 
     <nav>
         <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <a href="#about-preview">About</a>
+        <a href="#skills-preview">Skills</a>
+        <a href="#projects-preview">Projects</a>
         <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact-preview">Contact</a>
     </nav>
 </header>
 
-
 <section class="home" id="home">
-
     <div class="hero">
         <h1>Hello, I'm Abhijith</h1>
         <p>A Web Developer passionate about creating responsive and clean websites.</p>
         <a href="#about-preview" class="btn">Explore More</a>
     </div>
-
 </section>
 
-<!-- About Preview -->
 <section class="preview" id="about-preview">
     <h2>About Me</h2>
     <p>I’m an aspiring web developer who enjoys building clean, modern and responsive websites using HTML, CSS and JavaScript.</p>
     <a href="about.html" class="btn small-btn">Read More</a>
 </section>
 
-<!-- Skills Preview -->
 <section class="preview alt" id="skills-preview">
     <h2>Skills</h2>
     <p>HTML • CSS • JavaScript • Responsive Design</p>
     <a href="skills.html" class="btn small-btn">See Skills</a>
 </section>
 
-<!-- Projects Preview -->
 <section class="preview" id="projects-preview">
     <h2>Projects</h2>
     <p>Discover the projects I've built to practice and learn web development.</p>
     <a href="projects.html" class="btn small-btn">View Projects</a>
 </section>
 
-<!-- Contact Preview -->
 <section class="preview alt" id="contact-preview">
     <h2>Get In Touch</h2>
     <p>If you'd like to collaborate or ask anything, feel free to reach out.</p>
@@ -79,6 +64,17 @@
         <a href="mailto:abhijith@example.com">Email</a>
     </div>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+});
+</script>
 
 <script src="js/script.js"></script>
 </body>
