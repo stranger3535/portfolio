@@ -27,10 +27,19 @@ header {
     top: 0;
     z-index: 100;
 }
-
 nav {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+nav.active {
     display: flex;
 }
+
 
 nav a {
     margin-left: 20px;
@@ -182,24 +191,30 @@ footer {
 }
 
 .form-message {
-    display: none; 
-    margin-bottom: 15px;
-    padding: 12px 15px;
-    border-radius: 5px;
-    font-size: 16px;
+    display: none;
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
     text-align: center;
+}
+.form-message.sending {
+    background: rgba(255, 215, 0, 0.15);
+    border: 1px solid #ffd700;
+    color: #ffd700;
 }
 
 .form-message.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background: rgba(0, 255, 0, 0.12);
+    border: 1px solid #00d600;
+    color: #00d600;
 }
 
 .form-message.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    background: rgba(255, 0, 0, 0.12);
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
 }
 
 .page.projects {
