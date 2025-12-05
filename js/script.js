@@ -1,9 +1,25 @@
-
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('nav');
 
 menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
+});
+
+const menuLinks = document.querySelectorAll('nav a');
+
+menuLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        const target = link.getAttribute('href');
+
+        if (target.startsWith('#')) {
+            e.preventDefault();
+            const section = document.querySelector(target);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        navMenu.classList.remove('active'); 
+    });
 });
 
 const contactForm = document.getElementById('contactForm');
