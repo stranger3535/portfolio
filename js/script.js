@@ -22,9 +22,11 @@ menuLinks.forEach(link => {
     });
 });
 
+// Contact form handling with custom message box
 const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage'); // Make sure you add this div in HTML
 
-if (contactForm) {
+if (contactForm && formMessage) {
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -33,11 +35,22 @@ if (contactForm) {
         const message = document.getElementById("message").value.trim();
 
         if (!name || !email || !message) {
-            alert("Please fill all fields.");
+            formMessage.textContent = "Please fill all fields.";
+            formMessage.className = "form-message error";
+            formMessage.style.display = "block";
             return;
         }
 
-        alert("Message submitted successfully!");
+        // Success message
+        formMessage.textContent = "Message submitted successfully!";
+        formMessage.className = "form-message success";
+        formMessage.style.display = "block";
+
         contactForm.reset();
+
+        // Hide the message after 3 seconds
+        setTimeout(() => {
+            formMessage.style.display = "none";
+        }, 3000);
     });
 }
