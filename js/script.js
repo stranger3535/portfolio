@@ -22,9 +22,8 @@ menuLinks.forEach(link => {
     });
 });
 
-// Contact form handling with custom message box
 const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage'); // Make sure you add this div in HTML
+const formMessage = document.getElementById('formMessage'); 
 
 if (contactForm && formMessage) {
     contactForm.addEventListener('submit', function (e) {
@@ -41,14 +40,12 @@ if (contactForm && formMessage) {
             return;
         }
 
-        // Success message
         formMessage.textContent = "Message submitted successfully!";
         formMessage.className = "form-message success";
         formMessage.style.display = "block";
 
         contactForm.reset();
 
-        // Hide the message after 3 seconds
         setTimeout(() => {
             formMessage.style.display = "none";
         }, 3000);
