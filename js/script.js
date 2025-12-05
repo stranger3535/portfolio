@@ -51,3 +51,36 @@ if (contactForm && formMessage) {
         }, 3000);
     });
 }
+// CONTACT FORM HANDLER (Web3Forms)
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        formMessage.textContent = "Sending...";
+        formMessage.style.color = "yellow";
+
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            if (response.ok) {
+                formMessage.textContent = "Message sent successfully!";
+                formMessage.style.color = "lightgreen";
+                contactForm.reset();
+            } else {
+                formMessage.textContent = "Message failed. Try again.";
+                formMessage.style.color = "red";
+            }
+        } catch (error) {
+            formMessage.textContent = "Network error. Try again.";
+            formMessage.style.color = "red";
+        }
+    });
+}
