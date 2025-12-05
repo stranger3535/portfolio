@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -139,6 +138,50 @@ footer {
 .footer-links a:hover {
     color: white;
 }
+
+/* Contact Form Styling */
+#contactForm {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: #222;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+#contactForm button {
+    padding: 12px 25px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#contactForm button:hover {
+    background: #444;
+}
+
 @media (max-width: 768px) {
 
     nav {
@@ -169,5 +212,10 @@ footer {
     .footer-links a {
         display: inline-block;
         margin: 8px;
+    }
+
+    #contactForm {
+        padding: 15px;
+        margin: 20px;
     }
 }
